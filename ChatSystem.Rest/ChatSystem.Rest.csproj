@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AspNetCore.ClaimsValueProvider" Version="2.0.1" />
+      <PackageReference Include="Mapster" Version="7.3.0" />
+      <PackageReference Include="Serilog" Version="3.0.1" />
+      <PackageReference Include="Serilog.Sinks.Console" Version="4.1.0" />
+      <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+      <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.5.0" />
+      <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.5.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ChatSystem.Authorization\ChatSystem.Authorization.csproj" />
+      <ProjectReference Include="..\ChatSystem.Data\ChatSystem.Data.csproj" />
+      <ProjectReference Include="..\ChatSystem.Logic\ChatSystem.Logic.csproj" />
+    </ItemGroup>
+
+</Project>

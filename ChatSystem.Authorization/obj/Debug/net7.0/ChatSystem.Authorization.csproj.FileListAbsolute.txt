@@ -1,0 +1,17 @@
+C:\Users\some1\RiderProjects\ChatSystem\ChatSystem.Authorization\obj\Debug\net7.0\ChatSystem.Authorization.csproj.AssemblyReference.cache
+C:\Users\some1\RiderProjects\ChatSystem\ChatSystem.Authorization\obj\Debug\net7.0\ChatSystem.Authorization.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\some1\RiderProjects\ChatSystem\ChatSystem.Authorization\obj\Debug\net7.0\ChatSystem.Authorization.AssemblyInfoInputs.cache
+C:\Users\some1\RiderProjects\ChatSystem\ChatSystem.Authorization\obj\Debug\net7.0\ChatSystem.Authorization.AssemblyInfo.cs
+C:\Users\some1\RiderProjects\ChatSystem\ChatSystem.Authorization\obj\Debug\net7.0\ChatSystem.Authorization.csproj.CoreCompileInputs.cache
+C:\Users\some1\RiderProjects\ChatSystem\ChatSystem.Authorization\bin\Debug\net7.0\ChatSystem.Authorization.deps.json
+C:\Users\some1\RiderProjects\ChatSystem\ChatSystem.Authorization\bin\Debug\net7.0\ChatSystem.Authorization.dll
+C:\Users\some1\RiderProjects\ChatSystem\ChatSystem.Authorization\bin\Debug\net7.0\ChatSystem.Authorization.pdb
+C:\Users\some1\RiderProjects\ChatSystem\ChatSystem.Authorization\bin\Debug\net7.0\ChatSystem.Data.dll
+C:\Users\some1\RiderProjects\ChatSystem\ChatSystem.Authorization\bin\Debug\net7.0\ChatSystem.Data.pdb
+C:\Users\some1\RiderProjects\ChatSystem\ChatSystem.Authorization\obj\Debug\net7.0\ChatSystem.Authorization.csproj.CopyComplete
+C:\Users\some1\RiderProjects\ChatSystem\ChatSystem.Authorization\obj\Debug\net7.0\ChatSystem.Authorization.dll
+C:\Users\some1\RiderProjects\ChatSystem\ChatSystem.Authorization\obj\Debug\net7.0\refint\ChatSystem.Authorization.dll
+C:\Users\some1\RiderProjects\ChatSystem\ChatSystem.Authorization\obj\Debug\net7.0\ChatSystem.Authorization.pdb
+C:\Users\some1\RiderProjects\ChatSystem\ChatSystem.Authorization\obj\Debug\net7.0\ref\ChatSystem.Authorization.dll
+C:\Users\some1\RiderProjects\ChatSystem\ChatSystem.Authorization\bin\Debug\net7.0\ChatSystem.ApiWrapper.dll
+C:\Users\some1\RiderProjects\ChatSystem\ChatSystem.Authorization\bin\Debug\net7.0\ChatSystem.ApiWrapper.pdb

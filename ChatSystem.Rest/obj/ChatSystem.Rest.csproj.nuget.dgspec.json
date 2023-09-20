@@ -1,0 +1,437 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\some1\\RiderProjects\\ChatSystem\\ChatSystem.Rest\\ChatSystem.Rest.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\some1\\RiderProjects\\ChatSystem\\ChatSystem.ApiWrapper\\ChatSystem.ApiWrapper.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\some1\\RiderProjects\\ChatSystem\\ChatSystem.ApiWrapper\\ChatSystem.ApiWrapper.csproj",
+        "projectName": "ChatSystem.ApiWrapper",
+        "projectPath": "C:\\Users\\some1\\RiderProjects\\ChatSystem\\ChatSystem.ApiWrapper\\ChatSystem.ApiWrapper.csproj",
+        "packagesPath": "C:\\Users\\some1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\some1\\RiderProjects\\ChatSystem\\ChatSystem.ApiWrapper\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\VS\\SDKS\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\some1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\some1\\RiderProjects\\ChatSystem\\ChatSystem.Authorization\\ChatSystem.Authorization.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\some1\\RiderProjects\\ChatSystem\\ChatSystem.Authorization\\ChatSystem.Authorization.csproj",
+        "projectName": "ChatSystem.Authorization",
+        "projectPath": "C:\\Users\\some1\\RiderProjects\\ChatSystem\\ChatSystem.Authorization\\ChatSystem.Authorization.csproj",
+        "packagesPath": "C:\\Users\\some1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\some1\\RiderProjects\\ChatSystem\\ChatSystem.Authorization\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\VS\\SDKS\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\some1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\some1\\RiderProjects\\ChatSystem\\ChatSystem.Data\\ChatSystem.Data.csproj": {
+                "projectPath": "C:\\Users\\some1\\RiderProjects\\ChatSystem\\ChatSystem.Data\\ChatSystem.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Mapster": {
+              "target": "Package",
+              "version": "[7.3.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\some1\\RiderProjects\\ChatSystem\\ChatSystem.Data\\ChatSystem.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\some1\\RiderProjects\\ChatSystem\\ChatSystem.Data\\ChatSystem.Data.csproj",
+        "projectName": "ChatSystem.Data",
+        "projectPath": "C:\\Users\\some1\\RiderProjects\\ChatSystem\\ChatSystem.Data\\ChatSystem.Data.csproj",
+        "packagesPath": "C:\\Users\\some1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\some1\\RiderProjects\\ChatSystem\\ChatSystem.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\VS\\SDKS\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\some1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\some1\\RiderProjects\\ChatSystem\\ChatSystem.ApiWrapper\\ChatSystem.ApiWrapper.csproj": {
+                "projectPath": "C:\\Users\\some1\\RiderProjects\\ChatSystem\\ChatSystem.ApiWrapper\\ChatSystem.ApiWrapper.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Mapster": {
+              "target": "Package",
+              "version": "[7.3.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.6.122, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\some1\\RiderProjects\\ChatSystem\\ChatSystem.Logic\\ChatSystem.Logic.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\some1\\RiderProjects\\ChatSystem\\ChatSystem.Logic\\ChatSystem.Logic.csproj",
+        "projectName": "ChatSystem.Logic",
+        "projectPath": "C:\\Users\\some1\\RiderProjects\\ChatSystem\\ChatSystem.Logic\\ChatSystem.Logic.csproj",
+        "packagesPath": "C:\\Users\\some1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\some1\\RiderProjects\\ChatSystem\\ChatSystem.Logic\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\VS\\SDKS\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\some1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\some1\\RiderProjects\\ChatSystem\\ChatSystem.Data\\ChatSystem.Data.csproj": {
+                "projectPath": "C:\\Users\\some1\\RiderProjects\\ChatSystem\\ChatSystem.Data\\ChatSystem.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "MailKit": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "Mapster": {
+              "target": "Package",
+              "version": "[7.3.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.Options": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.Options.ConfigurationExtensions": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "MimeKit": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "Serilog": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
+            "Serilog.Sinks.Console": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.6.122, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\some1\\RiderProjects\\ChatSystem\\ChatSystem.Rest\\ChatSystem.Rest.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\some1\\RiderProjects\\ChatSystem\\ChatSystem.Rest\\ChatSystem.Rest.csproj",
+        "projectName": "ChatSystem.Rest",
+        "projectPath": "C:\\Users\\some1\\RiderProjects\\ChatSystem\\ChatSystem.Rest\\ChatSystem.Rest.csproj",
+        "packagesPath": "C:\\Users\\some1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\some1\\RiderProjects\\ChatSystem\\ChatSystem.Rest\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\VS\\SDKS\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\some1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\some1\\RiderProjects\\ChatSystem\\ChatSystem.Authorization\\ChatSystem.Authorization.csproj": {
+                "projectPath": "C:\\Users\\some1\\RiderProjects\\ChatSystem\\ChatSystem.Authorization\\ChatSystem.Authorization.csproj"
+              },
+              "C:\\Users\\some1\\RiderProjects\\ChatSystem\\ChatSystem.Data\\ChatSystem.Data.csproj": {
+                "projectPath": "C:\\Users\\some1\\RiderProjects\\ChatSystem\\ChatSystem.Data\\ChatSystem.Data.csproj"
+              },
+              "C:\\Users\\some1\\RiderProjects\\ChatSystem\\ChatSystem.Logic\\ChatSystem.Logic.csproj": {
+                "projectPath": "C:\\Users\\some1\\RiderProjects\\ChatSystem\\ChatSystem.Logic\\ChatSystem.Logic.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "AspNetCore.ClaimsValueProvider": {
+              "target": "Package",
+              "version": "[2.0.1, )"
+            },
+            "Mapster": {
+              "target": "Package",
+              "version": "[7.3.0, )"
+            },
+            "Serilog": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
+            "Serilog.Sinks.Console": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            },
+            "Swashbuckle.AspNetCore.Swagger": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerGen": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

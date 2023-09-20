@@ -1,0 +1,17 @@
+C:\Users\some1\RiderProjects\ChatSystem\ChatSystem.Logic\bin\Debug\net7.0\ChatSystem.Logic.deps.json
+C:\Users\some1\RiderProjects\ChatSystem\ChatSystem.Logic\bin\Debug\net7.0\ChatSystem.Logic.dll
+C:\Users\some1\RiderProjects\ChatSystem\ChatSystem.Logic\bin\Debug\net7.0\ChatSystem.Logic.pdb
+C:\Users\some1\RiderProjects\ChatSystem\ChatSystem.Logic\obj\Debug\net7.0\ChatSystem.Logic.csproj.AssemblyReference.cache
+C:\Users\some1\RiderProjects\ChatSystem\ChatSystem.Logic\obj\Debug\net7.0\ChatSystem.Logic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\some1\RiderProjects\ChatSystem\ChatSystem.Logic\obj\Debug\net7.0\ChatSystem.Logic.AssemblyInfoInputs.cache
+C:\Users\some1\RiderProjects\ChatSystem\ChatSystem.Logic\obj\Debug\net7.0\ChatSystem.Logic.AssemblyInfo.cs
+C:\Users\some1\RiderProjects\ChatSystem\ChatSystem.Logic\obj\Debug\net7.0\ChatSystem.Logic.csproj.CoreCompileInputs.cache
+C:\Users\some1\RiderProjects\ChatSystem\ChatSystem.Logic\obj\Debug\net7.0\ChatSystem.Logic.dll
+C:\Users\some1\RiderProjects\ChatSystem\ChatSystem.Logic\obj\Debug\net7.0\refint\ChatSystem.Logic.dll
+C:\Users\some1\RiderProjects\ChatSystem\ChatSystem.Logic\obj\Debug\net7.0\ChatSystem.Logic.pdb
+C:\Users\some1\RiderProjects\ChatSystem\ChatSystem.Logic\obj\Debug\net7.0\ref\ChatSystem.Logic.dll
+C:\Users\some1\RiderProjects\ChatSystem\ChatSystem.Logic\bin\Debug\net7.0\ChatSystem.Data.dll
+C:\Users\some1\RiderProjects\ChatSystem\ChatSystem.Logic\bin\Debug\net7.0\ChatSystem.Data.pdb
+C:\Users\some1\RiderProjects\ChatSystem\ChatSystem.Logic\obj\Debug\net7.0\ChatSystem.Logic.csproj.CopyComplete
+C:\Users\some1\RiderProjects\ChatSystem\ChatSystem.Logic\bin\Debug\net7.0\ChatSystem.ApiWrapper.dll
+C:\Users\some1\RiderProjects\ChatSystem\ChatSystem.Logic\bin\Debug\net7.0\ChatSystem.ApiWrapper.pdb
