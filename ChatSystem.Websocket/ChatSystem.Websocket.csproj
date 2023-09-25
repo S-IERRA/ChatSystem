@@ -8,11 +8,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Abstractions\" />
-      <Folder Include="Models\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <PackageReference Include="StackExchange.Redis" Version="2.6.122" />
     </ItemGroup>
 

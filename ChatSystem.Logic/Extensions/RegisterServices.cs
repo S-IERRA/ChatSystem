@@ -16,9 +16,11 @@ public static class RegisterServices
     { 
         serviceCollection.Configure<SmtpSettings>(configuration.GetSection("MailSettings"));
         serviceCollection.Configure<KeysConfig>(configuration.GetSection("Keys"));
+        
+        serviceCollection.AddSingleton(typeof(IRedisCommunicationService), typeof(RedisCommunicationImplementation));
 
-        //ToDo: review whether this needs to be a singleton
-        serviceCollection.AddScoped(typeof(IRedisCommunicationService), typeof(RedisCommunicationImplementation));
+        /*using var serviceProvider = serviceCollection.BuildServiceProvider(); 
+        serviceProvider.GetRequiredService<IRedisCommunicationService>();*/
 
         //ToDo: below won't be needed
         serviceCollection.AddScoped(typeof(IRecaptchaService), typeof(ReCaptchaImplementation));

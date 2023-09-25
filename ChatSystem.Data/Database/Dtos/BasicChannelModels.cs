@@ -4,7 +4,16 @@ using Mapster;
 namespace ChatSystem.Data.Dtos;
 
 [AdaptFrom(typeof(ChatChannel))]
-public class BasicGroupChannel
+public record BasicChannel
+{
+    public Guid Id { get; set; }
+
+    public required string Name { get; set; }
+    public required ChatChannelType Type { get; set; }
+}
+
+[AdaptFrom(typeof(ChatChannel))]
+public record BasicGroupChannel
 {
     public Guid Id { get; set; }
 
@@ -21,7 +30,7 @@ public class BasicGroupChannel
 }
 
 [AdaptFrom(typeof(ChatChannel))]
-public class BasicDmChannel
+public record BasicDmChannel
 {
     public Guid Id { get; set; }
     
@@ -35,7 +44,7 @@ public class BasicDmChannel
 }
 
 [AdaptFrom(typeof(ChatChannel))]
-public class BasicServerChannel
+public record BasicServerChannel
 {
     public Guid Id { get; set; }
     

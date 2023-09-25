@@ -1,6 +1,8 @@
+using System.Net;
 using AspNetCore.ClaimsValueProvider;
 using ChatSystem.Authorization.Models;
 using ChatSystem.Data;
+using ChatSystem.Data.Dtos;
 using ChatSystem.Data.Models;
 using ChatSystem.Logic.Abstractions;
 using ChatSystem.Logic.Models.Rest;
@@ -33,7 +35,7 @@ public class MessageController  : ControllerBase
     //There is no need to check whether the user is friends with the recipient because there is already a check on channel creation
     //ToDo: fire off in websocket
     [HttpPost("{channelId:guid}/send")]
-    public async Task<IActionResult> Send([FromClaim(ChatClaims.UserId)] Guid userId, [FromClaim(ChatClaims.SessionId)] Guid sessionId, Guid channelId, string content)
+    public async Task<IActionResult> Send([FromClaim(ChatClaims.UserId)] Guid userId, Guid channelId, string content)
     {
         await using var context = await _dbContext.CreateDbContextAsync();
 
@@ -56,7 +58,7 @@ public class MessageController  : ControllerBase
         context.Messages.Add(newMessage);
         await context.SaveChangesAsync();
 
-        await _redisCommunication.SendAsync(RedisEventTypes.NewMessage, sessionId, newMessage);
+        await _redisCommunication.SendViaChannelAsync(RedisEventTypes.NewMessage, channelId, (BasicMessage)newMessage);
         
         return Ok();
     }
@@ -72,6 +74,8 @@ public class MessageController  : ControllerBase
         context.Messages.Remove(message);
         await context.SaveChangesAsync();
         
+        await _redisCommunication.SendViaChannelAsync(RedisEventTypes.DeleteMessage, message.ChannelId, (BasicMessage)message);
+
         return Ok();
     }
     
@@ -86,6 +90,8 @@ public class MessageController  : ControllerBase
         message.Content = content;
         await context.SaveChangesAsync();
         
+        await _redisCommunication.SendViaChannelAsync(RedisEventTypes.EditMessage, message.ChannelId, (BasicMessage)message);
+
         return Ok();
     }
 }

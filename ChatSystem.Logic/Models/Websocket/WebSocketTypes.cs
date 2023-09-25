@@ -1,6 +1,6 @@
 namespace ChatSystem.Logic.Models.Websocket;
 
-public record WebSocketMessage(WebSocketOpcodes WebSocketOpCode, string? Message, WebSocketEvents? EventType, Guid? Session);
+public record WebSocketMessage(WebSocketOpcodes WebSocketOpCode, string? Message, RedisEventTypes? EventType, Guid? Session);
 
 public enum WebSocketOpcodes
 {
@@ -8,15 +8,4 @@ public enum WebSocketOpcodes
     Login  = 1,
     Logout = 2,
     Heartbeat,
-}
-
-public enum WebSocketEvents
-{
-    Message,
-    
-    FriendIncoming,
-    FriendAccept,
-    FriendDecline,
-    
-    Block
 }

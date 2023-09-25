@@ -11,7 +11,6 @@ public enum ChatChannelType
     Server
 }
 
-//ToDo: in-case of group channels needs a admin
 public class ChatChannel : IEntityTypeConfiguration<ChatChannel>
 {
     public Guid Id { get; set; }
@@ -39,12 +38,10 @@ public class ChatChannel : IEntityTypeConfiguration<ChatChannel>
             .HasDefaultValue(Guid.NewGuid());
 
         builder.HasOne(x => x.Moderator)
-            .WithMany(x=>x.Channels)
-            .HasForeignKey(x=>x.ModeratorId)
-            .OnDelete(DeleteBehavior.SetNull);
-        
-        builder.HasMany(x => x.Users)
             .WithMany();
+
+        builder.HasMany(x => x.Users)
+            .WithMany(x => x.Channels);
         
         builder.HasMany(x => x.ViewPermissions)
             .WithMany(x => x.Channels);

@@ -12,8 +12,7 @@ Log.Logger = new LoggerConfiguration()
     .WriteTo.Console(theme: AnsiConsoleTheme.Code)
     .MinimumLevel.Debug()
     .CreateLogger();
-    
-    
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 builder.Services.AddSingleton<Serilog.ILogger>(Log.Logger);
@@ -22,9 +21,9 @@ builder.Services.AddMemoryCache();
 
 builder.Services.RegisterRateLimits();
 builder.Services.RegisterHttpClients();
-builder.Services.RegisterDataServices(builder.Configuration);
-builder.Services.RegisterLogicServices(builder.Configuration);
+builder.Services.RegisterDataServices();
 builder.Services.RegisterAuthorization(builder.Configuration);
+builder.Services.RegisterLogicServices(builder.Configuration);
 
 builder.Services.AddSwaggerGen();
 
@@ -47,14 +46,12 @@ app.MapControllers();
 //app.UseHttpsRedirection();
 app.UseAuthorization();
 
-/*
-using (var serviceScope = app.Services.CreateScope())
+/*using (var serviceScope = app.Services.CreateScope())
 {
     var context = serviceScope.ServiceProvider.GetRequiredService<EntityFrameworkContext>();
     context.Database.EnsureDeleted();
     context.Database.EnsureCreated();
-}
-*/
+}*/
 
 // app.RegisterAuthorizationMiddlewares();
 

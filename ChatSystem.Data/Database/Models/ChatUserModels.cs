@@ -16,7 +16,7 @@ public record ChatUser : IEntityTypeConfiguration<ChatUser>
     public Guid? RegistrationToken { get; set; }
     public Guid? PasswordResetToken { get; set; }
     
-    public virtual ICollection<ChatChannel> Channels { get; set; } = new HashSet<ChatChannel>();
+    public ICollection<ChatChannel> Channels { get; set; } = new HashSet<ChatChannel>();
     public ICollection<ChatRelationship> Relationships { get; set; } = new HashSet<ChatRelationship>();
 
     public void Configure(EntityTypeBuilder<ChatUser> builder)

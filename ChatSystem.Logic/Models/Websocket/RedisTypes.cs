@@ -1,3 +1,5 @@
+using System.Net;
+
 namespace ChatSystem.Logic.Models.Websocket;
 
 public record RedisTransferMessage(RedisOpcodes OpCodes, RedisEventTypes EventType, Guid SessionId, string Data);
@@ -12,10 +14,20 @@ public enum RedisOpcodes
 public enum RedisEventTypes
 {
     None,
+    Error,
+    
     NewMessage,
     EditMessage,
     DeleteMessage,
     
     IncomingFriendRequest,
-    OutgoingFriendRequest
+    OutgoingFriendRequest,
+    DeclinedFriendRequest,
+    CancelFriendRequest,
+    
+    Unfriended,
+    Friended,
+
+    Unblocked,
+    Blocked,
 }

@@ -33,6 +33,4 @@ public class ChatMessage : IEntityTypeConfiguration<ChatMessage>
             .WithMany()
             .HasForeignKey(x => x.AuthorId);
     }
-    
-    public static implicit operator string(ChatMessage message) => JsonSerializer.Serialize(message, JsonHelper.JsonSerializerOptions);
 }

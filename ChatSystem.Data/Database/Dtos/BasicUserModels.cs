@@ -1,3 +1,5 @@
+using System.Text.Json;
+using ChatSystem.ApiWrapper.Helpers;
 using ChatSystem.Data.Models;
 using Mapster;
 
@@ -24,4 +26,20 @@ public record ForeignBasicChatUser
     
     public static explicit operator ForeignBasicChatUser(ChatUser fullUser) =>
         fullUser.Adapt<ForeignBasicChatUser>();
+}
+
+
+[AdaptFrom(typeof(ChatRelationship))]
+public record BasicChatRelationship
+{
+    public Guid Id { get; set; }
+    
+    public ICollection<ForeignBasicChatUser> Users { get; set; } = new HashSet<ForeignBasicChatUser>();
+
+    public required ChatRelationShipType Type { get; set; } = ChatRelationShipType.None;
+    
+    public static explicit operator BasicChatRelationship(ChatRelationship fullUser) =>
+        fullUser.Adapt<BasicChatRelationship>();
+    
+    public static implicit operator string(BasicChatRelationship message) => JsonSerializer.Serialize(message, JsonHelper.JsonSerializerOptions);
 }

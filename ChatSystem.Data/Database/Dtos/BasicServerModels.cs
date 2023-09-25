@@ -16,13 +16,13 @@ public record BasicChatServer
         request.Adapt<BasicChatServer>();
 }
 
-public class BasicChatServerOwner
+public record BasicChatServerOwner
 {
     public BasicChatUser User { get; set; }
 }
 
 [AdaptFrom(typeof(ChatServerInvite))]
-public class BasicChatServerInvite
+public record BasicChatServerInvite
 {
     public Guid Id { get; set; }
 
@@ -33,7 +33,7 @@ public class BasicChatServerInvite
 }
 
 [AdaptFrom(typeof(ChatServerLog))]
-public class BasicChatServerLog
+public record BasicChatServerLog
 {
     public Guid Id { get; set; }
     
