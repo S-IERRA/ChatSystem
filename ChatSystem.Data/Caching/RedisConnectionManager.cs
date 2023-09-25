@@ -2,7 +2,6 @@ using StackExchange.Redis;
 
 namespace ChatSystem.Data.Caching;
 
-//ToDO: Inject the value
 public static class RedisConnectionManager
 {
     private static readonly Lazy<ConnectionMultiplexer> LazyConnection = new(

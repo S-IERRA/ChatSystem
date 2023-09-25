@@ -44,7 +44,7 @@ public class AdminRoleCheckMiddleware
             return;
         }
         
-        /*ToDo: if(!chatUser.Roles.HasFlag(NumixRole.Administrator))
+        /* if(!chatUser.Roles.HasFlag(NumixRole.Administrator))
         {
             context.Response.StatusCode = StatusCodes.Status401Unauthorized;
             return;

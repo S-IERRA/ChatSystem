@@ -54,8 +54,7 @@ public record BasicServerChannel
     public required string Name { get; set; }
     public required ChatChannelType Type = ChatChannelType.Server;
 
-    //ToDo: needs basic type
-    public virtual ICollection<ChatServerRole> ViewPermissions { get; set; } = new HashSet<ChatServerRole>();  
+    public virtual ICollection<BasicChatServerRole> ViewPermissions { get; set; } = new HashSet<BasicChatServerRole>();  
 
     public static explicit operator BasicServerChannel(ChatChannel request) =>
         request.Adapt<BasicServerChannel>();

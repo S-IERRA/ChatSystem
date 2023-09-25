@@ -26,8 +26,6 @@ public class JwtUser
 
     public required IPAddress? IssuingIpAddress { get; set; }
     public required string Email { get; set; }
-
-    //ToDo: public NumixRole Roles { get; set; }
     
     public IEnumerable<Claim> Claims()
     {
@@ -43,8 +41,6 @@ public class JwtUser
             new Claim(ChatClaims.SessionId, SessionId.ToString()),
             
             new Claim(ChatClaims.IssuingIpAddress, IssuingIpAddress?.ToString() ?? ""),
-
-            // new Claim(NumixClaims.Roles, Roles.ToString())
         };
         
         return claims;

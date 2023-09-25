@@ -62,7 +62,6 @@ public class RelationShipController : ControllerBase
         return Ok();
     }
 
-    //ToDo: is user already has a relationship of any sort , decline the request
     [HttpPost("{targetUsername}/send-friend-request")]
     public async Task<IActionResult> SendFriendRequest([FromClaim(ChatClaims.UserId)] Guid userId, string targetUsername)
     {
@@ -184,7 +183,6 @@ public class RelationShipController : ControllerBase
         return Ok();
     }
     
-    //ToDo: if user is friends, remove that friendship
     [HttpPost("{targetUserId:guid}/block")]
     public async Task<IActionResult> BlockUser([FromClaim(ChatClaims.UserId)] Guid userId, Guid targetUserId)
     {

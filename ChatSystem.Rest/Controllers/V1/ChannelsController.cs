@@ -19,8 +19,6 @@ namespace ChatSystem.Rest.Controllers.V1;
 [EnableRateLimiting("Api")]
 public class ChannelsController : ControllerBase
 {
-    //ToDo: combine group and server into 1 method
-    
     private readonly IDbContextFactory<EntityFrameworkContext> _dbContext;
 
     public ChannelsController(IDbContextFactory<EntityFrameworkContext> dbContext)

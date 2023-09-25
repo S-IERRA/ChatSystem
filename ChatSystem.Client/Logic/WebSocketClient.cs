@@ -7,8 +7,6 @@ using ChatSystem.Logic.Models.Websocket;
 
 namespace ChatSystem.Client.Logic;
 
-//ToDo: Convert the client and the server to aa shared file to inherit from
-//ToDo: Convert reply tasks to a cached task, kafka seems good in this situation
 public class WebSocketClient
 {
     private readonly Socket Client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
@@ -44,8 +42,7 @@ public class WebSocketClient
     public WebSocketClient()
     {
         
-        //ToDo  add support for fragmentation on the server side
-        Client.DontFragment = true;
+        //ToDO: Test Client.DontFragment = true;
         
         //Resolve dns
         //IPAddress addresses = IPAddress.Parse("12")//Dns.GetHostAddresses("0.tcp.eu.ngrok.io")[0];

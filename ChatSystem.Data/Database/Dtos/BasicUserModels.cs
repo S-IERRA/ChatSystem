@@ -43,3 +43,12 @@ public record BasicChatRelationship
     
     public static implicit operator string(BasicChatRelationship message) => JsonSerializer.Serialize(message, JsonHelper.JsonSerializerOptions);
 }
+
+//ToDo: type could use a bit of expanding with foreign users
+[AdaptFrom(typeof(ChatServerRole))]
+public record BasicChatServerRole
+{
+    public Guid Id { get; set; }
+
+    public required string Name { get; set; }
+}

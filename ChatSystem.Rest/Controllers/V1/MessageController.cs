@@ -14,9 +14,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ChatSystem.Rest.Controllers.V1;
 
-//ToDo: implement websocket communication
-//ToDo: implement basic receiver client
-
 [Authorize]
 [ApiController]
 [Route("api/v1/messages")]
@@ -33,7 +30,6 @@ public class MessageController  : ControllerBase
     }
 
     //There is no need to check whether the user is friends with the recipient because there is already a check on channel creation
-    //ToDo: fire off in websocket
     [HttpPost("{channelId:guid}/send")]
     public async Task<IActionResult> Send([FromClaim(ChatClaims.UserId)] Guid userId, Guid channelId, string content)
     {

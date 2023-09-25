@@ -19,12 +19,10 @@ using JsonHelper = ChatSystem.ApiWrapper.Helpers.JsonHelper;
 
 namespace ChatSystem.Websocket.Logic;
 
-//ToDo merge redis communicator into WebSocketServer
 public class WebSocketServer : IDisposable
 {
     private static readonly ArrayPool<byte> ArrayPool = ArrayPool<byte>.Create();
 
-    //private static readonly RedisCommunicator RedisCommunicator = new RedisCommunicator();
     private static readonly ConnectionMultiplexer CacheClient = RedisConnectionManager.Connection;
     private static readonly ISubscriber RedisSubscriber = CacheClient.GetSubscriber();
 
