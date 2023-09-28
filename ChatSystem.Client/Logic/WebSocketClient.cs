@@ -23,7 +23,7 @@ public class WebSocketClient
 
         for (;;)
         {
-            byte[] buffer = ArrayPool<byte>.Shared.Rent(512);
+            byte[] buffer = ArrayPool.Rent(512);
 
             do
             {
@@ -61,9 +61,33 @@ public class WebSocketClient
         WebSocketMessage message = new(webSocketOpCode, dataSerialized, eventType, _userSession);
 
         string messageSerialized = JsonSerializer.Serialize(message);
-        byte[] dataCompressed = Encoding.UTF8.GetBytes(messageSerialized);//GZip.Compress(messageSerialized, PacketIndex);
+        byte[] dataCompressed = Compress(messageSerialized);
 
         await Client.SendAsync(dataCompressed, SocketFlags.None);
+    }
+
+    private static byte[] Int2Byte(int number)
+    {
+        var bytes = new byte[2];
+        bytes[0] = (byte)(number & 0xFF);
+        bytes[1] = (byte)((number >> 8) & 0xFF);
+        return bytes;
+    }
+
+    private static byte[] Compress(string data)
+    {
+        byte[] dataBytes = Encoding.UTF8.GetBytes(data);
+        byte[] length = Int2Byte(data.Length);
+
+        byte[] prepended = length.Concat(dataBytes).ToArray();
+
+        /*using MemoryStream ms = new();
+        using (GZipStream zip = new(ms, CompressionMode.Compress, true))
+        {
+            zip.Write(prepended, 0, prepended.Length);
+        }*/
+
+        return prepended; //ms.ToArray();
     }
 
     public async Task Send(WebSocketOpcodes webSocketOpCode)

@@ -29,6 +29,23 @@ public class MessageController  : ControllerBase
         _redisCommunication = redisCommunication;
     }
 
+    /*public async Task<IActionResult> FetchMessages([FromClaim(ChatClaims.UserId)] Guid userId, Guid channelId, int pageId)
+    {
+        await using var context = await _dbContext.CreateDbContextAsync();
+
+        if (await context.Channels.Where(x => x.Id == channelId)
+                .Include(x=>x.Users)
+                .Include(x=>x.Messages)
+                .FirstOrDefaultAsync() is not { } 
+                channel)
+            return NotFound();
+
+        if (channel.Users.FirstOrDefault(x => x.Id == userId) is null)
+            return BadRequest();
+        
+        
+    }*/
+
     //There is no need to check whether the user is friends with the recipient because there is already a check on channel creation
     [HttpPost("{channelId:guid}/send")]
     public async Task<IActionResult> Send([FromClaim(ChatClaims.UserId)] Guid userId, Guid channelId, string content)

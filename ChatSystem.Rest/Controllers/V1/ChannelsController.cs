@@ -4,8 +4,10 @@ using ChatSystem.Authorization.Models;
 using ChatSystem.Data;
 using ChatSystem.Data.Dtos;
 using ChatSystem.Data.Models;
+using ChatSystem.Logic.Abstractions;
 using ChatSystem.Logic.Helpers;
 using ChatSystem.Logic.Models.Rest;
+using ChatSystem.Logic.Models.Websocket;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
@@ -20,10 +22,12 @@ namespace ChatSystem.Rest.Controllers.V1;
 public class ChannelsController : ControllerBase
 {
     private readonly IDbContextFactory<EntityFrameworkContext> _dbContext;
+    private readonly IRedisCommunicationService _redisCommunication;
 
-    public ChannelsController(IDbContextFactory<EntityFrameworkContext> dbContext)
+    public ChannelsController(IDbContextFactory<EntityFrameworkContext> dbContext, IRedisCommunicationService redisCommunication)
     {
         _dbContext = dbContext;
+        _redisCommunication = redisCommunication;
     }
 
     // dm / group channels
@@ -92,6 +96,9 @@ public class ChannelsController : ControllerBase
                 return BadRequest();
         }
         
+        foreach (var user in users.Where(user => user.SessionId is not null))
+            await _redisCommunication.SendViaSessionAsync(RedisEventTypes.CreateNewChannel, user.SessionId.Value, returnValue);
+        
         context.Channels.Add(chatChannel);
         await context.SaveChangesAsync();
         
@@ -120,6 +127,28 @@ public class ChannelsController : ControllerBase
         context.Channels.Add(chatChannel);
         await context.SaveChangesAsync();
         
+        return Ok();
+    }
+
+    [HttpDelete("delete-channel")]
+    public async Task<IActionResult> DeleteChannel([FromClaim(ChatClaims.UserId)] Guid userId, Guid channelId)
+    {
+        //ToDo determine channel type, if server we have to check permissions if gc or regular then check if moderator if dm bad request
+        
+        await using var context = await _dbContext.CreateDbContextAsync();
+
+        if (await context.Channels.FirstOrDefaultAsync(x => x.Id == channelId) is not { } channel)
+            return BadRequest();
+
+        if (channel.ModeratorId is not null && userId != channel.ModeratorId)
+            return BadRequest();
+        /*else
+            return BadRequest(); // dm channel
+        //ToDo add permissions check for servers*/
+            
+        context.Channels.Remove(channel);
+        await context.SaveChangesAsync();
+
         return Ok();
     }
 }

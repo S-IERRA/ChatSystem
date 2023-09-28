@@ -74,10 +74,10 @@ public class RedisCommunicationImplementation : IRedisCommunicationService
     }
 
     public async Task SendViaSessionAsync(RedisEventTypes type, Guid sessionId, string message) =>
-        await SendViaChannelAsync(RedisOpcodes.Event, type, sessionId, message);
+        await SendViaSessionAsync(RedisOpcodes.Event, type, sessionId, message);
 
     public async Task SendViaSessionAsync(RedisOpcodes opCode, Guid sessionId, string message = "") =>
-        await SendViaChannelAsync(opCode, RedisEventTypes.None, sessionId, message);
+        await SendViaSessionAsync(opCode, RedisEventTypes.None, sessionId, message);
     
     public static IPEndPoint? CreateIpEndPoint(string ipAddressString, int port)
     {

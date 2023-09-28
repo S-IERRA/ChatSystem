@@ -159,25 +159,23 @@ public class WebSocketServer : IDisposable
                 Array.Resize(ref buffer, buffer.Length + 512);
             } 
             while (socketUser.UnderSocket.Available > 0);
-
-            byte[] decompressedBytes = await ByteUtils.Decompress(buffer);
-
+            
             for (int totalRead = 0; totalReceived - totalRead > 0;)
             {
-                int length = ByteUtils.Byte2Int(decompressedBytes, totalRead);
+                int length = ByteUtils.Byte2Int(buffer, totalRead);
 
-                string rawMessage = Encoding.UTF8.GetString(decompressedBytes, totalRead + 4, length);
-                totalRead += length + 8;
+                string rawMessage = Encoding.UTF8.GetString(buffer, totalRead + 2, length);
+                totalRead += length + 2;
 
                 if (!JsonHelper.TryDeserialize<WebSocketMessage>(rawMessage, out var socketMessage))
                     continue;
                 
-                if(totalReceived - totalRead is 0)
+                if(totalReceived - totalRead is <= 0)
                     ArrayPool.Return(buffer, true);
                 
                 switch (socketMessage.WebSocketOpCode)
                 {
-                    case WebSocketOpcodes.Login:
+                    case WebSocketOpcodes.Login when !socketUser.IsIdentified:
                     {
                         if (String.IsNullOrWhiteSpace(socketMessage.Message))
                             continue;
@@ -197,11 +195,11 @@ public class WebSocketServer : IDisposable
                         socketUser.IsIdentified = true;
                         await context.SaveChangesAsync();
 
-                        var channels = user.Channels.Select(x => x.Id).ToList();
-                        foreach (var channelId in channels)
+                        List<Guid>? channelIds = user.Channels.Select(x => x.Id).ToList();
+                        foreach (var channelId in channelIds)
                             await RedisUserCache.CacheChannelUser(channelId.ToString(), sessionId.ToString());
 
-                        await socketUser.Send(WebSocketOpcodes.Login, JsonSerializer.Serialize(channels));
+                        await socketUser.Send(WebSocketOpcodes.Login, JsonSerializer.Serialize(channelIds));
                         continue;
                     }
 

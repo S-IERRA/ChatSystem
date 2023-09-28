@@ -20,11 +20,14 @@ public enum RedisEventTypes
     EditMessage,
     DeleteMessage,
     
+    CreateNewChannel,
+    DeleteChannel,
+    
     IncomingFriendRequest,
     OutgoingFriendRequest,
     DeclinedFriendRequest,
     CancelFriendRequest,
-    
+
     Unfriended,
     Friended,
 

@@ -10,7 +10,7 @@ using Serilog.Sinks.SystemConsole.Themes;
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console(theme: AnsiConsoleTheme.Code)
-    .MinimumLevel.Debug()
+    .MinimumLevel.Warning()
     .CreateLogger();
 
 var builder = WebApplication.CreateBuilder(args);

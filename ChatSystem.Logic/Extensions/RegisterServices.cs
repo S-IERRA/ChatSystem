@@ -1,5 +1,6 @@
 
 using ChatSystem.Logic.Abstractions;
+using ChatSystem.Logic.Caching.Rest;
 using ChatSystem.Logic.Constants.Configs;
 using ChatSystem.Logic.Email.Implementations;
 using ChatSystem.Logic.Http.Implementations;
@@ -18,6 +19,7 @@ public static class RegisterServices
         serviceCollection.Configure<KeysConfig>(configuration.GetSection("Keys"));
         
         serviceCollection.AddSingleton(typeof(IRedisCommunicationService), typeof(RedisCommunicationImplementation));
+        serviceCollection.AddSingleton(typeof(IGenericCacheService), typeof(GenericCacheImplementation));
 
         /*using var serviceProvider = serviceCollection.BuildServiceProvider(); 
         serviceProvider.GetRequiredService<IRedisCommunicationService>();*/
